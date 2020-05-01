@@ -8,6 +8,16 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use(express.json());
 
+app.get('/item/:id', (req, res) => {
+  db.find(req.params, (err, about) => {
+    if (err) {
+      res.status(500).send('Error retrieving items details');
+    } else {
+      res.send(about);
+    }
+  })
+})
+
 app.post('/item', (req, res) => {
   db.save(req.body, (err, results) => {
     if (err) {
