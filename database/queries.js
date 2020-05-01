@@ -13,6 +13,18 @@ const save = (item, cb) => {
   });
 }
 
+const find = (id, cb) => {
+  aboutItem.find(id, (err, results) => {
+    if (err) {
+      console.log('Error finding item in queries');
+      cb(err, null);
+    } else {
+      cb(null, results);
+    }
+  })
+}
+
 module.exports = {
-  save
+  save,
+  find
 };
