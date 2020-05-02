@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+import Details from './Details';
+import Shipping from './Shipping';
+import QA from './QA';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -9,8 +13,11 @@ class App extends Component {
       name: null,
       details: {},
       shipping: {},
-      qa: {}
+      qa: {},
+      tab: 'details'
     };
+
+    this.tab = this.tab.bind(this);
   }
 
   componentDidMount() {
@@ -33,10 +40,27 @@ class App extends Component {
       });
   }
 
+  tab(e) {
+    console.log(e.target.id)
+    this.setState({tab: e.target.id})
+  }
+
   render() {
     return (
       <div id='about'>
-        <h2 class='title'>About this item</h2>
+        <h2 className='title'>About this item</h2>
+        <div className='subcomp'>
+          <div className='tabs'>
+            <ul className='tabList'>
+              <li className='tabHeader' id='details-tab' onClick={this.tab}>Details</li>
+              <li className='tabHeader' id='shipping-tab' onClick={this.tab}>Shipping & Returns</li>
+              <li className='tabHeader' id='qa-tab' onClick={this.tab}>Q&A</li>
+            </ul>
+          </div>
+          {this.state.tab === 'details-tab' ? <Details /> : null}
+          {this.state.tab === 'shipping-tab' ? <Shipping /> : null}
+          {this.state.tab === 'qa-tab' ? <QA /> : null}
+        </div>
       </div>
     )
   }

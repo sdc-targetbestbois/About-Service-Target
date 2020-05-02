@@ -1,20 +1,52 @@
 #about {
   background-color: rgb(247, 247, 247) !important;
-  padding-top: 16px !important;
-  margin: 16px 0;
-  outline: 0px;
+  margin: 16px 0; /* exterior spacing */
+  padding-top: 16px !important; /* interior spacing */
   display: block;
-  width: 80%;
+  width: 80%; 
   position: relative;
   left: 10%;
 
-  line-height: 1.4285;
   color: rgb(51, 51, 51);
-  font-family: Targetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica for Target", HelveticaForTarget, Targetica, "HelveticaNeue for Target", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-size-adjust: 100%;
   box-sizing: border-box;
 }
 
 .title {
   text-align: center;
+  vertical-align: baseline;
+  font-weight: bold;
+  line-height: 1.25;
+  font-size: 23px;
+  margin: 0px 0px 10px;
+}
+
+.subcomp {
+  margin-left: 16px !important;
+  display: block;
+}
+
+.tabs {
+  border-bottom: 1px solid rgb(136, 136, 136);
+  display: block;
+}
+
+.tabList {
+    padding-inline-start: 0px;
+    list-style: outside none none; /* type position image */
+    margin: 0px auto;
+    padding: 3px 1px 0px;
+    display: table;
+}
+
+.tabHeader {
+    font-size: 16px;
+    line-height: 1.4285;
+    display: table-cell;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    padding: 6px 15px;
+    transition: border-color 200ms ease 0s;
 }
