@@ -33,20 +33,82 @@
 }
 
 .tabList {
-    padding-inline-start: 0px;
-    list-style: outside none none; /* type position image */
-    margin: 0px auto;
-    padding: 3px 1px 0px;
-    display: table;
+  padding-inline-start: 0px;
+  list-style: outside none none; /* type position image */
+  margin: 0px auto;
+  padding: 3px 1px 0px;
+  display: table;
 }
 
 .tabHeader {
-    font-size: 16px;
-    line-height: 1.4285;
-    display: table-cell;
-    text-align: center;
-    white-space: nowrap;
-    border-bottom: 3px solid transparent;
-    padding: 6px 15px;
-    transition: border-color 200ms ease 0s;
+  font-size: 16px;
+  line-height: 1.4285;
+  display: table-cell;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  padding: 6px 15px;
+  transition: border-color 200ms ease 0s;
+}
+
+/* DETAILS TAB */
+
+.details {
+  font-size: 14px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  display: block;
+}
+
+.detailContent {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.detailTop {
+  margin: 16px;
+}
+
+.highlights {
+  height: 100%;
+  background-color: white;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 4px;
+}
+
+.highlightsHeader {
+  margin-left: 16px;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.highlightList {
+  margin: 0px 16px 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: initial;
+  margin-block-start: 0px;
+  padding-inline-start: 0px;
+}
+
+.highlightBorder {
+  padding-right: 16px;
+  padding-top: 12px;
+  flex-grow: 1;
+  flex-basis: 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+}
+
+.highlight {
+  margin-left: 20px;
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: outside;
 }

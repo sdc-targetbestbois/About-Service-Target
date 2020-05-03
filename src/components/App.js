@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
-import Details from './Details';
+import Details from './details/Details';
 import Shipping from './Shipping';
 import QA from './QA';
 
@@ -14,7 +14,7 @@ class App extends Component {
       details: {},
       shipping: {},
       qa: {},
-      tab: 'details'
+      tab: ''
     };
 
     this.tab = this.tab.bind(this);
@@ -32,7 +32,8 @@ class App extends Component {
           name: about.data[0].name,
           details: about.data[0].details,
           shipping: about.data[0].shipping,
-          qa: about.data[0].qA
+          qa: about.data[0].qA,
+          tab: 'details-tab'
         })
       })
       .catch(err => {
@@ -41,7 +42,6 @@ class App extends Component {
   }
 
   tab(e) {
-    console.log(e.target.id)
     this.setState({tab: e.target.id})
   }
 
@@ -57,7 +57,7 @@ class App extends Component {
               <li className='tabHeader' id='qa-tab' onClick={this.tab}>Q&A</li>
             </ul>
           </div>
-          {this.state.tab === 'details-tab' ? <Details /> : null}
+          {this.state.tab === 'details-tab' ? <Details details={this.state.details}/> : null}
           {this.state.tab === 'shipping-tab' ? <Shipping /> : null}
           {this.state.tab === 'qa-tab' ? <QA /> : null}
         </div>
