@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 
 import Details from './details/Details';
-import Shipping from './Shipping';
+import Shipping from './shipping/Shipping';
 import QA from './QA';
 
 class App extends Component {
@@ -58,7 +58,7 @@ class App extends Component {
             </ul>
           </div>
           {this.state.tab === 'details-tab' ? <Details details={this.state.details}/> : null}
-          {this.state.tab === 'shipping-tab' ? <Shipping /> : null}
+          {this.state.tab === 'shipping-tab' ? <Shipping shipping={this.state.shipping}/> : null}
           {this.state.tab === 'qa-tab' ? <QA /> : null}
         </div>
       </div>

@@ -6,7 +6,6 @@
   width: 80%; 
   position: relative;
   left: 10%;
-
   color: rgb(51, 51, 51);
   font-family: "Helvetica for Target", HelveticaForTarget, Targetica, "HelveticaNeue for Target", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-size-adjust: 100%;
@@ -164,4 +163,36 @@
 .descripBody {
   margin: 16px;
   display: block;
+}
+
+/* SHIPPING TAB */
+
+.shipping {
+  display: block;
+  margin: 16px;
+  padding: 0px 15px 15px 0px;
+}
+
+.shipContent {
+  margin: 16px;
+  padding: 4px;
+  background-color: white;
+}
+
+.shipSections {
+  margin-left: 16px;
+  display: block;
+}
+
+.shipping h4 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.shipping p {
+  margin: 0px;
+}
+
+.getBy {
+  color: rgb(0, 102, 1);
 }
