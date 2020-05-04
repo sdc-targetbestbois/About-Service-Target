@@ -1,6 +1,7 @@
 import React from 'react';
 import Highlights from './Highlights';
 import Specs from './Specs';
+import Description from './Description';
 
 const Details = ({details}) => {
   return (
@@ -10,7 +11,7 @@ const Details = ({details}) => {
           <Highlights highlights={details.highlights}/>
           <div className='lowerDeets'>
             <Specs specs={details.specs}/>
-
+            <Description descrip={details.description}/>
           </div>
         </div>
 

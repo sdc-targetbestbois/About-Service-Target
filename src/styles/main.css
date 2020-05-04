@@ -115,17 +115,19 @@
 
 .lowerDeets {
   margin: 16px;
-  display: block;
   background-color: white;
   padding: 16px 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .specs {
   padding: 0px 16px;
   margin-left: initial;
+  flex-direction: row;
   flex-basis: 50%;
   max-width: 50%;
-  flex-direction: row;
   box-sizing: border-box;
   display: block;
 }
@@ -133,7 +135,6 @@
 .specsHeader {
   margin: 0px 0px 16px;
   font-size: 16px;
-  
 }
 
 .spec {
@@ -143,4 +144,24 @@
   margin-bottom: 16px;
   border-width: 1px;
   border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.description {
+  padding-left: 16px;
+  margin-left: initial;
+  flex-basis: 50%;
+  flex-direction: row;
+  max-width: 50%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.descripHeader {
+  margin: 0px 0px 16px;
+  font-size: 16px;
+}
+
+.descripBody {
+  margin: 16px;
+  display: block;
 }
