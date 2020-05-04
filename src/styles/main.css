@@ -50,6 +50,10 @@
   transition: border-color 200ms ease 0s;
 }
 
+.selectedTab {
+  border-bottom: 3px solid rgb(204, 0, 0);
+}
+
 /* DETAILS TAB */
 
 .details {

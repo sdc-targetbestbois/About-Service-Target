@@ -52,9 +52,9 @@ class App extends Component {
         <div className='subcomp'>
           <div className='tabs'>
             <ul className='tabList'>
-              <li className='tabHeader' id='details-tab' onClick={this.tab}>Details</li>
-              <li className='tabHeader' id='shipping-tab' onClick={this.tab}>Shipping & Returns</li>
-              <li className='tabHeader' id='qa-tab' onClick={this.tab}>Q&A ({this.state.qa.length})</li>
+              <li className={`tabHeader ${this.state.tab === 'details-tab' ? 'selectedTab' : ''}`} id='details-tab' onClick={this.tab}>Details</li>
+              <li className={`tabHeader ${this.state.tab === 'shipping-tab' ? 'selectedTab' : ''}`} id='shipping-tab' onClick={this.tab}>Shipping & Returns</li>
+              <li className={`tabHeader ${this.state.tab === 'qa-tab' ? 'selectedTab' : ''}`} id='qa-tab' onClick={this.tab}>Q&A ({this.state.qa.length})</li>
             </ul>
           </div>
           {this.state.tab === 'details-tab' ? <Details details={this.state.details}/> : null}
