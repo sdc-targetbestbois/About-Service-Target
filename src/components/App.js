@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 import Details from './details/Details';
 import Shipping from './shipping/Shipping';
-import QA from './QA';
+import QA from './qa/QA';
 
 class App extends Component {
   constructor(props) {
@@ -54,12 +54,12 @@ class App extends Component {
             <ul className='tabList'>
               <li className='tabHeader' id='details-tab' onClick={this.tab}>Details</li>
               <li className='tabHeader' id='shipping-tab' onClick={this.tab}>Shipping & Returns</li>
-              <li className='tabHeader' id='qa-tab' onClick={this.tab}>Q&A</li>
+              <li className='tabHeader' id='qa-tab' onClick={this.tab}>Q&A ({this.state.qa.length})</li>
             </ul>
           </div>
           {this.state.tab === 'details-tab' ? <Details details={this.state.details}/> : null}
           {this.state.tab === 'shipping-tab' ? <Shipping shipping={this.state.shipping}/> : null}
-          {this.state.tab === 'qa-tab' ? <QA /> : null}
+          {this.state.tab === 'qa-tab' ? <QA qa={this.state.qa}/> : null}
         </div>
       </div>
     )
