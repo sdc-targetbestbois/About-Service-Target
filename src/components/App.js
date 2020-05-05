@@ -18,6 +18,7 @@ class App extends Component {
     };
 
     this.tab = this.tab.bind(this);
+    this.newQuestion = this.newQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -45,6 +46,25 @@ class App extends Component {
     this.setState({tab: e.target.id})
   }
 
+  newQuestion(q) {
+    const body = {
+      id: this.state.id,
+      name: this.state.name,
+      qA: {
+        question: q.question,
+        name: q.name
+      }
+    }
+
+    Axios.put('/item', body)
+      .then(() => {
+        const qas = this.state.qa;
+        qas.push(q);
+        this.setState({qa: qas})
+      })
+      .catch('Error posting question');
+  }
+
   render() {
     return (
       <div id='about'>
@@ -59,7 +79,7 @@ class App extends Component {
           </div>
           {this.state.tab === 'details-tab' ? <Details details={this.state.details}/> : null}
           {this.state.tab === 'shipping-tab' ? <Shipping shipping={this.state.shipping}/> : null}
-          {this.state.tab === 'qa-tab' ? <QA qa={this.state.qa}/> : null}
+          {this.state.tab === 'qa-tab' ? <QA qa={this.state.qa} new={this.newQuestion}/> : null}
         </div>
       </div>
     )

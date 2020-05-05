@@ -21,9 +21,13 @@ class QA extends React.Component {
       <div className='qa'>
         <div className='qaContainer'>
           <div className='qaContent'>
-            {this.props.qa.map((q, i) => {
-              return <Question q={q} key={i}/>
-            })}
+            {this.props.qa.length > 0 ? (
+              this.props.qa.map((q, i) => {
+                if (q) {
+                  return <Question q={q} key={i}/>
+                }
+              })
+            ) : null }
           </div>
           <div className='qaLower'>
             <div className='qButton'>
@@ -32,7 +36,7 @@ class QA extends React.Component {
             <div className='qButton'>
               {!this.state.ask ? <button className='ask' onClick={this.newQuestion}>Ask a Question</button> : null}
             </div>
-            {this.state.ask ? <NewQuestion /> : null}
+            {this.state.ask ? <NewQuestion close={this.newQuestion} new={this.props.new}/> : null}
           </div>
         </div>
       </div>
