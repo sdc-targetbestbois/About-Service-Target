@@ -5,12 +5,15 @@ class NewQuestion extends React.Component {
     super(props);
     this.state = {
       question: '',
-      name: ''
+      qMinLength: undefined,
+      name: '',
+      nMin: undefined
     }
 
     this.close = this.close.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.new = this.new.bind(this);
+    this.checkInput = this.checkInput.bind(this);
   }
 
   handleChange(e) {
@@ -25,11 +28,28 @@ class NewQuestion extends React.Component {
     }, () => this.props.close());
   }
 
+  checkInput(e) {
+    e.preventDefault();
+
+    e.target.name === 'question' ? this.setState({qMinLength: this.state.question.length >= 20}) : this.setState({nMin: this.state.name.length > 0});
+  }
+
   new(e) {
     e.preventDefault();
+
+    if (!this.state.qMinLength || !this.state.nMin) {
+      return;
+    }
+
     this.props.new({
-      question: this.state.question,
-      name: this.state.name
+        question: this.state.question,
+        name: this.state.name
+    })
+    this.setState({
+        question: '',
+        qMinLength: false,
+        name: '',
+        nMin: false
     })
   }
 
@@ -38,9 +58,11 @@ class NewQuestion extends React.Component {
       <div className='newQuestion'>
         <div className='questionForm'>
           <h3>Your question</h3>
-          <textarea className='questionField' placeholder='question' value={this.state.question} name='question' onChange={this.handleChange}/>
+          <textarea className='questionField' placeholder='question' value={this.state.question} name='question' onChange={this.handleChange} onBlur={this.checkInput}/>
+          {this.state.qMinLength === false ? <span id='minLength'>Questions must be at least 20 characters long</span> : null}
           <span>at least 20 characters</span>
-          <textarea className='questionName' placeholder='screen name' value={this.state.name} name='name' onChange={this.handleChange}></textarea>
+          <textarea className='questionName' placeholder='screen name' value={this.state.name} name='name' onChange={this.handleChange} onBlur={this.checkInput}></textarea>
+          {this.state.nMin === false ? <span id='minLength'>Please enter a screen name</span> : null}
           <span>this name will be displayed with your question</span>
           <div className='endForm'></div>
         </div>

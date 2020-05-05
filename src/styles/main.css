@@ -451,3 +451,10 @@
   border-radius: 4px;
   color: rgb(255, 255, 255);
 }
+
+#minLength {
+  color: rgb(184, 83, 0);
+  font-size: 12px;
+  padding-top: 3px;
+  margin: 3px 0px 0px;
+}
