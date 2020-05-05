@@ -25,7 +25,7 @@ const find = (id, cb) => {
 }
 
 const update = (body, cb) => {
-  aboutItem.findOneAndUpdate({id: body.id}, {$push: {qA: body.qa}}, (err, results) => {
+  aboutItem.updateOne({id: body.id}, {$push: {qA: body.qA}}, (err, results) => {
     if (err) {
       console.log('Error adding question to db');
       cb(err, null);
