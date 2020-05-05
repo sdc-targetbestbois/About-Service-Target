@@ -24,7 +24,7 @@ class QA extends React.Component {
             {this.props.qa.length > 0 ? (
               this.props.qa.map((q, i) => {
                 if (q) {
-                  return <Question q={q} key={i}/>
+                  return <Question q={q} key={i} newAns={this.props.newAns}/>
                 }
               })
             ) : null }

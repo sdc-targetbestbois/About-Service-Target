@@ -19,6 +19,7 @@ class App extends Component {
 
     this.tab = this.tab.bind(this);
     this.newQuestion = this.newQuestion.bind(this);
+    this.newAnswer = this.newAnswer.bind(this);
   }
 
   componentDidMount() {
@@ -56,13 +57,40 @@ class App extends Component {
       }
     }
 
-    Axios.put('/item', body)
+    Axios.put('/question', body)
       .then(() => {
         const qas = this.state.qa;
         qas.push(q);
         this.setState({qa: qas})
       })
       .catch('Error posting question');
+  }
+
+  newAnswer(a) {
+    const body = {
+      id: this.state.id,
+      qId: a.qId,
+      answer: {
+        answer: a.answer,
+        name: a.name,
+        helpful: 0,
+        notHelpful: 0
+      }
+    }
+
+    Axios.put('/answer', body)
+      .then(() => {
+        let qas = this.state.qa;
+        qas = qas.map(qs => {
+          if (qs._id === a.qId) {
+            qs.answers.push(body.answer);
+          }
+          return qs;
+        })
+        console.log(qas)
+        this.setState({qa: qas});
+      })
+      .catch('Error adding answer');
   }
 
   render() {
@@ -79,7 +107,7 @@ class App extends Component {
           </div>
           {this.state.tab === 'details-tab' ? <Details details={this.state.details}/> : null}
           {this.state.tab === 'shipping-tab' ? <Shipping shipping={this.state.shipping}/> : null}
-          {this.state.tab === 'qa-tab' ? <QA qa={this.state.qa} new={this.newQuestion}/> : null}
+          {this.state.tab === 'qa-tab' ? <QA qa={this.state.qa} new={this.newQuestion} newAns={this.newAnswer}/> : null}
         </div>
       </div>
     )

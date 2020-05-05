@@ -35,8 +35,21 @@ const update = (body, cb) => {
   })
 }
 
+const updateAnswer = (body, cb) => {
+  console.log(body)
+  aboutItem.update({id: body.id, "qA._id": body.qId}, {$push: {"qA.$.answers": body.answer}}, (err, results) => {
+    if (err) {
+      console.log('Error finding item');
+      cb(err, null);
+    } else {
+      cb(null, results);
+    }
+  })
+}
+
 module.exports = {
   save,
   find,
-  update
+  update,
+  updateAnswer
 };
