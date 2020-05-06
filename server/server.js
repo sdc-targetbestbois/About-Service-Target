@@ -28,6 +28,26 @@ app.post('/item', (req, res) => {
   })
 })
 
+app.put('/question', (req, res) => {
+  db.update(req.body, (err, results) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(results);
+    }
+  })
+})
+
+app.put('/answer', (req, res) => {
+  db.updateAnswer(req.body, (err, results) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(results);
+    }
+  })
+})
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 })

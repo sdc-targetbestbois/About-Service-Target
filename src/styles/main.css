@@ -1,0 +1,479 @@
+#about {
+  background-color: rgb(247, 247, 247) !important;
+  margin: 16px 0; /* exterior spacing */
+  padding-top: 16px !important; /* interior spacing */
+  display: block;
+  width: 80%; 
+  position: relative;
+  left: 10%;
+  color: rgb(51, 51, 51);
+  font-family: "Helvetica for Target", HelveticaForTarget, Targetica, "HelveticaNeue for Target", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  vertical-align: baseline;
+  font-weight: bold;
+  line-height: 1.25;
+  font-size: 23px;
+  margin: 0px 0px 10px;
+}
+
+.subcomp {
+  margin-left: 16px !important;
+  display: block;
+}
+
+.tabs {
+  border-bottom: 1px solid rgb(136, 136, 136);
+  display: block;
+}
+
+.tabList {
+  padding-inline-start: 0px;
+  list-style: outside none none; /* type position image */
+  margin: 0px auto;
+  padding: 3px 1px 0px;
+  display: table;
+}
+
+.tabHeader {
+  font-size: 16px;
+  line-height: 1.4285;
+  display: table-cell;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  padding: 6px 15px;
+  transition: border-color 200ms ease 0s;
+}
+
+.selectedTab {
+  border-bottom: 3px solid rgb(204, 0, 0);
+}
+
+/* DETAILS TAB */
+
+.details {
+  font-size: 14px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  display: block;
+}
+
+.detailContent {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.detailTop {
+  margin: 16px;
+}
+
+.highlights {
+  height: 100%;
+  background-color: white;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 4px;
+}
+
+.highlightsHeader {
+  margin-left: 16px;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.highlightList {
+  margin: 0px 16px 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: initial;
+  margin-block-start: 0px;
+  padding-inline-start: 0px;
+}
+
+.highlightBorder {
+  padding-right: 16px;
+  padding-top: 12px;
+  flex-grow: 1;
+  flex-basis: 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+}
+
+.highlight {
+  margin-left: 20px;
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.lowerDeets {
+  margin: 16px;
+  background-color: white;
+  padding: 16px 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.specs {
+  padding: 0px 16px;
+  margin-left: initial;
+  flex-direction: row;
+  flex-basis: 50%;
+  max-width: 50%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.specsHeader {
+  margin: 0px 0px 16px;
+  font-size: 16px;
+}
+
+.spec {
+  display: block;
+  font-size: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-width: 1px;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.description {
+  padding-left: 16px;
+  margin-left: initial;
+  flex-basis: 50%;
+  flex-direction: row;
+  max-width: 50%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.descripHeader {
+  margin: 0px 0px 16px;
+  font-size: 16px;
+}
+
+.descripBody {
+  margin: 16px;
+  display: block;
+}
+
+/* SHIPPING TAB */
+
+.shipping {
+  display: block;
+  margin: 16px;
+  padding: 0px 15px 15px 0px;
+}
+
+.shipContent {
+  margin: 16px;
+  padding: 4px;
+  background-color: white;
+}
+
+.shipSections {
+  margin-left: 16px;
+  display: block;
+}
+
+.shipping h4 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.shipping p {
+  margin: 0px;
+}
+
+.getBy {
+  color: rgb(0, 102, 1);
+}
+
+/* Q&A TAB */
+
+.qa {
+  display: block;
+  margin: 0px 16px;
+}
+
+.qaContainer {
+  padding: 16px 0px;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.qaContent {
+  margin-bottom: 16px;
+  display: block;
+}
+
+.question {
+  margin-left: initial;
+  flex-basis: 100%;
+  max-width: 100%;
+  flex-direction: row;
+  display: block;
+}
+
+.question h3 {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.question span {
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+}
+
+.answerContainer {
+  margin-left: 4px;
+  margin-top: 12px;
+}
+
+.answers {
+  padding: 0px 16px;
+  margin: 0px;
+  margin-left: initial;
+  display: block;
+  max-width: 100%;
+  flex-direction: row;
+  box-sizing: border-box;
+  list-style: outside none none;
+}
+
+.answer {
+  display: block;
+  width: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+  display: block;
+  flex-direction: row;
+}
+
+/* .qaContent {
+  margin-bottom: 16px;
+  display: block;
+}
+
+.question {
+  margin-left: initial;
+  flex-basis: 100%;
+  max-width: 100%;
+} */
+
+.answer span {
+  margin-top: 4px;
+  font-size: 14px;
+  display: list-item;
+}
+
+.answer div {
+  margin-bottom: 12px;
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+}
+
+.helpful {
+  margin-left: 12px;
+  color: rgb(102, 102, 102);
+}
+
+.answerIt {
+  padding: 0px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.answerIt button {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border-color: rgb(136, 136, 136);
+}
+
+.spacer {
+  margin: 16px 0px;
+  border-top: 1px solid rgb(214, 214, 214);
+}
+
+.qaLower {
+  margin: 0px -8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.qButton {
+  flex-basis: 50%;
+  max-width: 50%;
+  padding: 0px 8px;
+  box-sizing: border-box;
+}
+
+.allQs {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  border-radius: 4px;
+}
+
+.ask {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  background-color: rgb(204, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 0, 0);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+}
+
+.newQuestion {
+  padding: 0px 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  max-width: 100%;
+  flex-direction: row;
+}
+
+.questionForm {
+  padding: 0px;
+  display: flex;
+  flex-basis: 100%;
+  max-width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.questionForm h3 {
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  width: 100%;
+}
+
+.questionForm textarea {
+  padding-top: 3px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.4285;
+  resize: none;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 9px 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+}
+
+.questionField {
+  height: 110px;
+}
+
+.questionName {
+  height: 23px;
+}
+
+.questionForm span {
+  margin-bottom: 16px;
+  color: rgb(102, 102, 102);
+  font-size: 12px;
+  width: 100%;
+}
+
+.endForm {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-top: 1px solid rgb(214, 214, 214);
+  width: 100%;
+}
+
+.formButtons {
+  margin: 16px -8px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cancelSubmit {
+  display: flex;
+  flex-basis: 50%;
+  max-width: 50%;
+  padding: 0px 8px;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+
+.cancelQuestion {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  border-radius: 4px;
+}
+
+.submit {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  background-color: rgb(204, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 0, 0);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+}
+
+#minLength {
+  color: rgb(184, 83, 0);
+  font-size: 12px;
+  padding-top: 3px;
+  margin: 3px 0px 0px;
+}

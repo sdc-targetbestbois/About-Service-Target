@@ -24,7 +24,32 @@ const find = (id, cb) => {
   })
 }
 
+const update = (body, cb) => {
+  aboutItem.updateOne({id: body.id}, {$push: {qA: body.qA}}, (err, results) => {
+    if (err) {
+      console.log('Error adding question to db');
+      cb(err, null);
+    } else {
+      cb(null, results);
+    }
+  })
+}
+
+const updateAnswer = (body, cb) => {
+  console.log(body)
+  aboutItem.update({id: body.id, "qA._id": body.qId}, {$push: {"qA.$.answers": body.answer}}, (err, results) => {
+    if (err) {
+      console.log('Error finding item');
+      cb(err, null);
+    } else {
+      cb(null, results);
+    }
+  })
+}
+
 module.exports = {
   save,
-  find
+  find,
+  update,
+  updateAnswer
 };
