@@ -264,17 +264,6 @@
   flex-direction: row;
 }
 
-/* .qaContent {
-  margin-bottom: 16px;
-  display: block;
-}
-
-.question {
-  margin-left: initial;
-  flex-basis: 100%;
-  max-width: 100%;
-} */
-
 .answer span {
   margin-top: 4px;
   font-size: 14px;
