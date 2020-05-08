@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 const PORT = 8000;
 const db = require('../database/queries');
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
-
+app.use(cors());
 app.use(express.json());
 
 app.get('/item/:id', (req, res) => {
