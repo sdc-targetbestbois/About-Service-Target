@@ -25,6 +25,12 @@ class App extends Component {
   componentDidMount() {
     this.getAbout();
 
+    const numQ = document.getElementsByClassName('numQuestions')
+    numQ[0].addEventListener('click', () => {
+      this.setState({tab: 'qa-tab'})
+    })
+    
+
     // document.addEventListener
       // on event, setState({id}, () => this.getAbout())
   }
