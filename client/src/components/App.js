@@ -26,11 +26,11 @@ class App extends Component {
     this.getAbout();
 
     const numQ = document.getElementsByClassName('numQuestions')
-    numQ[0].addEventListener('click', () => {
-      this.setState({tab: 'qa-tab'})
-    })
-    
-
+    if (numQ[0]) {
+      numQ[0].addEventListener('click', () => {
+        this.setState({tab: 'qa-tab'})
+      })
+    }
     // document.addEventListener
       // on event, setState({id}, () => this.getAbout())
   }
