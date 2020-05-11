@@ -1,11 +1,12 @@
 #about {
   background-color: rgb(247, 247, 247) !important;
-  margin: 16px 0; /* exterior spacing */
+  margin: 16px auto; /* exterior spacing */
   padding-top: 16px !important; /* interior spacing */
   display: block;
-  width: 80%; 
+  max-width: 1400px;
+  /* width: 80%; 
   position: relative;
-  left: 10%;
+  left: 10%; */
   color: rgb(51, 51, 51);
   font-family: "Helvetica for Target", HelveticaForTarget, Targetica, "HelveticaNeue for Target", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-size-adjust: 100%;

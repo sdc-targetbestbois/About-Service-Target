@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
+      id: 1,
       name: null,
       details: {},
       shipping: {},
@@ -23,11 +23,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getAbout(1);
+    this.getAbout();
+
+    const numQ = document.getElementsByClassName('numQuestions')
+    if (numQ[0]) {
+      numQ[0].addEventListener('click', () => {
+        this.setState({tab: 'qa-tab'})
+      })
+    }
+    // document.addEventListener
+      // on event, setState({id}, () => this.getAbout())
   }
 
-  getAbout(id) {
-    Axios.get(`/item/${id}`)
+  getAbout() {
+    Axios.get(`http://localhost:8000/item/${this.state.id}`)
       .then(about => {
         this.setState({
           id: about.data[0].id,
@@ -57,7 +66,7 @@ class App extends Component {
       }
     }
 
-    Axios.put('/question', body)
+    Axios.put('http://localhost:8000/question', body)
       .then(() => {
         const qas = this.state.qa;
         qas.push(q);
@@ -78,7 +87,7 @@ class App extends Component {
       }
     }
 
-    Axios.put('/answer', body)
+    Axios.put('http://localhost:8000/answer', body)
       .then(() => {
         let qas = this.state.qa;
         qas = qas.map(qs => {
