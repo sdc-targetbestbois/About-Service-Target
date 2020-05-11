@@ -4,7 +4,7 @@ const path = require('path');
 const PORT = 8000;
 const db = require('../database/queries');
 
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use(express.json());
 

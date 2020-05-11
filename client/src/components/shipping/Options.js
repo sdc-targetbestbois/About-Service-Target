@@ -11,7 +11,7 @@ const Options = (props) => {
   return (
     <div className='shipSections'>
       <h4>Shipping options</h4>
-      <p><span className='getBy'>Get it by {getBy}</span> with free 2-day shipping</p>
+      <p><span className='getBy'>Get it by {getBy}</span> with free 2-day Raven or Dragon Mail</p>
     </div>
   )
 }
