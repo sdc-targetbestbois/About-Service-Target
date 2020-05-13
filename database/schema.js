@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/targaryen')
+const db = require('./config.js');
+mongoose.connect(db.uri, {useNewUrlParser: true})
   .then(() => {
     console.log('Database connection successful')
   })
