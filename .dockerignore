@@ -1,3 +1,5 @@
 .gitignore
 node_modules
 webpack.config.js
+database/data.json
+README.md
