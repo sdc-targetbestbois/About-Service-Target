@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(cors());
 app.use(express.json());
 
-app.get('/item/:id', (req, res) => {
+app.get('/:id', (req, res) => {
   db.find(req.params, (err, about) => {
     if (err) {
       res.status(500).send('Error retrieving items details');

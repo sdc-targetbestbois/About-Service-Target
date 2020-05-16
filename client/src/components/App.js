@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getAbout();
+    this.getAbout(1);
 
     const numQ = document.getElementsByClassName('numQuestions')
     if (numQ[0]) {
@@ -31,12 +31,17 @@ class App extends Component {
         this.setState({tab: 'qa-tab'})
       })
     }
-    // document.addEventListener
-      // on event, setState({id}, () => this.getAbout())
+    
+    const search = document.getElementById('searchInputForm');
+    if (search) {
+      search.addEventListener('submit', () => {
+        this.getAbout(search.name);
+      })
+    }
   }
 
-  getAbout() {
-    Axios.get(`http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/item/${this.state.id}`)
+  getAbout(id) {
+    Axios.get(`http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/${id}`)
       .then(about => {
         this.setState({
           id: about.data[0].id,
