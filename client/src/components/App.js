@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getAbout();
+    this.getAbout(1);
 
     const numQ = document.getElementsByClassName('numQuestions')
     if (numQ[0]) {
@@ -31,12 +31,17 @@ class App extends Component {
         this.setState({tab: 'qa-tab'})
       })
     }
-    // document.addEventListener
-      // on event, setState({id}, () => this.getAbout())
+    
+    const search = document.getElementById('searchInputForm');
+    if (search) {
+      search.addEventListener('submit', () => {
+        this.getAbout(search.name);
+      })
+    }
   }
 
-  getAbout() {
-    Axios.get(`http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/item/${this.state.id}`)
+  getAbout(id) {
+    Axios.get(`http://localhost:8000/${id}`)
       .then(about => {
         this.setState({
           id: about.data[0].id,
@@ -66,7 +71,7 @@ class App extends Component {
       }
     }
 
-    Axios.put('http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/question', body)
+    Axios.put('http://localhost:8000/question', body)
       .then(() => {
         const qas = this.state.qa;
         qas.push(q);
@@ -87,7 +92,7 @@ class App extends Component {
       }
     }
 
-    Axios.put('http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/answer', body)
+    Axios.put('http://localhost:8000/answer', body)
       .then(() => {
         let qas = this.state.qa;
         qas = qas.map(qs => {
