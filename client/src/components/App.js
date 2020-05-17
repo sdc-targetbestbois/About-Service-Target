@@ -50,6 +50,11 @@ class App extends Component {
           shipping: about.data[0].shipping,
           qa: about.data[0].qA,
           tab: 'details-tab'
+        }, () => {
+          const numQuestions = new CustomEvent('questions', {
+            detail: this.state.qa.length
+          })
+          document.dispatchEvent(numQuestions);
         })
       })
       .catch(err => {
@@ -75,7 +80,12 @@ class App extends Component {
       .then(() => {
         const qas = this.state.qa;
         qas.push(q);
-        this.setState({qa: qas})
+        this.setState({qa: qas}, () => {
+          const numQuestions = new CustomEvent('questions', {
+            detail: this.state.qa.length
+          })
+          document.dispatchEvent(numQuestions);
+        })
       })
       .catch('Error posting question');
   }
